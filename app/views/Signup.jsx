@@ -38,7 +38,7 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Program:</Form.Label>
                         <Form.Control as="select" name="program" id="program">
                             <option>Select Program</option>
-                            {props1.map((program) => <option key={program}>{program}</option>)}
+                            { props1.length > 0 && (props1.map((program) => <option key={program}>{program}</option>)) }
                         </Form.Control>
                     </Col>
                     <Col>
