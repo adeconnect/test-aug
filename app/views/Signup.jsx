@@ -3,18 +3,15 @@ import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
 import Layout from './Shared/Layout';
 
 const Signup = ({ props1, props2, props3, user }) => {
-
-    console.log(props1);
-    console.log(props2);
-    console.log(props3);
-    console.log(user);
- 
     return (
         <Layout user={user}>
             <main className="mx-auto w-50 p-3">
             <h1>Signup</h1>
             <Form id="signupForm" action="signup" method="POST"> 
-               
+                {props3.length > 0 && (
+                  <Alert variant="danger">
+                    {props3.map((anyAlert) => { return <> {anyAlert} <br/></>})}
+                  </Alert>)}
                 <Form.Group as={Row}>
                     <Col>
                         <Form.Label>First Name:</Form.Label>
@@ -40,6 +37,7 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Program:</Form.Label>
                         <Form.Control as="select" name="program" id="program">
                             <option>Select Program</option>
+                            { props1.length > 0 && (props1.map((program) => <option key={program}>{program}</option>)) }
                         </Form.Control>
                     </Col>
                     <Col>
@@ -50,6 +48,7 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Graduation Year:</Form.Label>
                         <Form.Control as="select" name="graduationYear" id="graduationYear">
                             <option>Select Graduation Year</option>
+                            {props2.length > 0 && (props2.map((gradYear) => <option key={gradYear}>{gradYear}</option>))}
                         </Form.Control>
                     </Col>
                 </Form.Group>
