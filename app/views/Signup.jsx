@@ -49,7 +49,7 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Graduation Year:</Form.Label>
                         <Form.Control as="select" name="graduationYear" id="graduationYear">
                             <option>Select Graduation Year</option>
-                            {props2.map((gradYear) => <option key={gradYear}>{gradYear}</option>)}
+                            {props2.length > 0 && (props2.map((gradYear) => <option key={gradYear}>{gradYear}</option>))}
                         </Form.Control>
                     </Col>
                 </Form.Group>
