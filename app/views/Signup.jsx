@@ -40,7 +40,6 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Program:</Form.Label>
                         <Form.Control as="select" name="program" id="program">
                             <option>Select Program</option>
-                            { props1.length > 0 && (props1.map((program) => <option key={program}>{program}</option>)) }
                         </Form.Control>
                     </Col>
                     <Col>
@@ -51,7 +50,6 @@ const Signup = ({ props1, props2, props3, user }) => {
                         <Form.Label>Graduation Year:</Form.Label>
                         <Form.Control as="select" name="graduationYear" id="graduationYear">
                             <option>Select Graduation Year</option>
-                            {props2.length > 0 && (props2.map((gradYear) => <option key={gradYear}>{gradYear}</option>))}
                         </Form.Control>
                     </Col>
                 </Form.Group>
