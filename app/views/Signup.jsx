@@ -3,16 +3,18 @@ import { Alert, Button, Col, Form, Row } from 'react-bootstrap';
 import Layout from './Shared/Layout';
 
 const Signup = ({ props1, props2, props3, user }) => {
+
+    console.log(props1);
+    console.log(props2);
+    console.log(props3);
+    console.log(user);
  
     return (
         <Layout user={user}>
             <main className="mx-auto w-50 p-3">
             <h1>Signup</h1>
             <Form id="signupForm" action="signup" method="POST"> 
-                {props3.length > 0 && (
-                  <Alert variant="danger">
-                    {props3.map((anyAlert) => { return <> {anyAlert} <br/></>})}
-                  </Alert>)}
+               
                 <Form.Group as={Row}>
                     <Col>
                         <Form.Label>First Name:</Form.Label>
